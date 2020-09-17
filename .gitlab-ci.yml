@@ -1,11 +1,11 @@
 build:
   script:
-    - .\gradlew build
+    - ./gradlew build
  
 test:
   stage: test
   script:
-    - .\gradlew test
+    - ./gradlew test
  
 after_script:
   - echo "End CI"

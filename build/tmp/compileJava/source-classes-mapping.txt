@@ -1,0 +1,7 @@
+fontys/sem3/ticketwebsite/resources/TicketResources.java
+ fontys.sem3.ticketwebsite.resources.TicketResources
+ fontys.sem3.ticketwebsite.resources.TicketResources$1
+fontys/sem3/ticketwebsite/model/Ticket.java
+ fontys.sem3.ticketwebsite.model.Ticket
+fontys/sem3/ticketwebsite/repository/FakeDataStore.java
+ fontys.sem3.ticketwebsite.repository.FakeDataStore
