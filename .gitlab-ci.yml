@@ -1,11 +1,19 @@
 build:
   script:
+<<<<<<< HEAD
     - ./gradlew build
+=======
+    - ./gradle build
+>>>>>>> 1a2b825987965e003fa4aaec527bc28e63bd7574
  
 test:
   stage: test
   script:
+<<<<<<< HEAD
     - ./gradlew test
+=======
+    - ./gradle test
+>>>>>>> 1a2b825987965e003fa4aaec527bc28e63bd7574
  
 after_script:
   - echo "End CI"
