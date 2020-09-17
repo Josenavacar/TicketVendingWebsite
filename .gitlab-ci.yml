@@ -1,11 +1,11 @@
 build:
   script:
-    - gradle build
+    - ./gradle build
  
 test:
   stage: test
   script:
-    - gradle test
+    - ./gradle test
  
 after_script:
   - echo "End CI"
