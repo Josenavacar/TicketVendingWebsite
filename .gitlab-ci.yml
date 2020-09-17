@@ -1,10 +1,6 @@
-before_script:
-- export GRADLE_USER_HOME=$(pwd)/.gradle
-- chmod +x ./gradlew
- 
 build:
   script:
-    - ./gradlew assemble
+    - gradle build
  
 test:
   stage: test
