@@ -10,7 +10,10 @@ public class Ticket {
 	int row, seat;
 	private static int seatCounter = 1;
 	private boolean space = true;
-
+	
+	/**
+		next time, add some javadoc ;-)
+	*/
 	public Ticket(String ownerName, String ownerID)
 	{
 		if(space) {
