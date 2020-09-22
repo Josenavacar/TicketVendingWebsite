@@ -9,11 +9,11 @@ repositories {
 }
 
 application{
-    mainClassName 'fontys.sem3.service.Publisher'
+    mainClassName 'fontys.sem3.ticketwebsite.Publisher'
 }
 
 dependencies {
-     /*  Jersey for the service
+     /*  Jersey for the ticketwebsite
         We use the latest 2.x release because 2.x releases implement JAX-RS 2.1 API.
         We do NOT use a Jersey 3.x release because 3.x releases implement Jakarta RESTful WebServices 3.0 API.*/
     implementation group: 'org.glassfish.jersey.bundles', name: 'jaxrs-ri', version: '2.+'
@@ -27,7 +27,7 @@ dependencies {
 
 
 
-    // Grizzly will host the service
+    // Grizzly will host the ticketwebsite
     implementation group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.+'
 
 

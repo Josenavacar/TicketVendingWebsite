@@ -2,22 +2,19 @@ package fontys.sem3.ticketwebsite.repository;
 
 import fontys.sem3.ticketwebsite.model.Ticket;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FakeDataStore {
 
-    private final List<Ticket> ticketList = new ArrayList<Ticket>();
+    private final List<Ticket> ticketList = new ArrayList<>();
 
-    public FakeDataStore()
-    {
-        Ticket ticket1 = new Ticket("Gregorio Mistasas", "12345678A");
-        Ticket ticket2 = new Ticket("Frank Castle", "23456789B");
-        Ticket ticket3 = new Ticket("John Rambo", "34567890C");
-
-        ticketList.add(ticket1);
-        ticketList.add(ticket2);
-        ticketList.add(ticket3);
+    public FakeDataStore() {
+        ticketList.add(new Ticket("Gregorio Mistasas", "12345678A"));
+        ticketList.add(new Ticket("Frank Castle", "23456789B"));
+        ticketList.add(new Ticket("John Rambo", "34567890C"));
     }
+
 
     public Ticket getTicket(int seat)
     {
