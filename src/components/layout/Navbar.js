@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export class Navbar extends Component {
     static defaultProps = {
         title: 'Ticket Website',
-        icon: 'fab fa-github'
+        icon: 'fas fa-futbol'
     }
     static propTypes = {
         title: PropTypes.string.isRequired,
