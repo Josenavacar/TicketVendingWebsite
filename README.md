@@ -1,3 +1,10 @@
+Steps to run project:
+	1. Open project and import maven settings so that the java executable is found.
+	2. Execute the project.
+	3. Open terminal on root directory and launch command 'npm start' (Node js installation required).
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
