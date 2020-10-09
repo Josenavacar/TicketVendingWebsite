@@ -1,7 +1,37 @@
 Steps to run project:
-	1. Open project and import maven settings so that the java executable is found.
+	1. Open project (IntelliJ if possible) and import maven settings so that the java executable is found.
 	2. Execute the project.
-	3. Open terminal on root directory and launch command 'npm start' (Node js installation required).
+	3. Open terminal on root directory (or open the IDE's Terminal) and type command 'npm start' (Node js installation required).
+	4. Proceed to POSTMAN.
+
+Note:
+So far only the class of Fan is implemented fully, the reason being that I want to investigate more on how to
+connect a database before I continue to program everything else with a fake database.
+
+In order to do CRUD operations I recommend using Postman. This are the different operations:
+
+Create: (POST) localhost:8080/api/v1/fan
+	Body:
+	{
+    		"username": "defaultusername",
+    		"password": "defaultpassword",
+    		"email": "defaultemail"
+	}
+
+Delete: (DELETE) localhost:8080/api/v1/fan/{username}
+
+Update: (PUT) localhost:8080/api/v1/fan/{username}
+	Body:
+	{
+    		"username": "defaultusername",
+    		"password": "defaultpassword",
+    		"email": "defaultemail"
+	}
+Get: (GET) localhost:8080/api/v1/fan (All users/fans)
+Get: (GET) localhost:8080/api/v1/fan/{username} (Specific user/fan)
+
+
+
 
 
 
