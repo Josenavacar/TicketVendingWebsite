@@ -1,4 +1,4 @@
-package com.website.api;
+package com.website.controller;
 
 import com.website.model.Fan;
 import com.website.service.FanService;
@@ -37,12 +37,12 @@ public class FanController {
     }
 
     @DeleteMapping(path = "{username}")
-    public void deleteFanById(@PathVariable("id") String username) {
+    public void deleteFanById(@PathVariable("username") String username) {
         fanService.deleteFan(username);
     }
 
     @PutMapping(path = "{username}")
-    public void updateFan(@PathVariable("id") String username, @Valid @NonNull @RequestBody Fan fanToUpdate) {
+    public void updateFan(@PathVariable("username") String username, @Valid @NonNull @RequestBody Fan fanToUpdate) {
         fanService.updateFan(username, fanToUpdate);
     }
 }

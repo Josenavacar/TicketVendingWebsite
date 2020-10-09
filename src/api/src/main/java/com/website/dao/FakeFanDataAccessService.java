@@ -63,7 +63,7 @@ public class FakeFanDataAccessService implements FanDao {
                 .map(fan -> {
                     int indexOfFanToUpdate = FanDB.indexOf(fan);
                     if(indexOfFanToUpdate >= 0) {
-                        FanDB.set(indexOfFanToUpdate, new Fan(username, updated.getPassword(), updated.getEmail()));
+                        FanDB.set(indexOfFanToUpdate, new Fan(updated.getUserName(), updated.getPassword(), updated.getEmail()));
                         return 1;
                     }
                     return 0;
