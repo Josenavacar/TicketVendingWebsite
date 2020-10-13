@@ -16,6 +16,7 @@ public class Ticket {
     public Ticket(@JsonProperty("fan") Fan fan,
                   @JsonProperty("match") Match match)
     {
+        //Calculate seat
         if(space) {
             this.match = match;
             this.seat = match.getSeatCounter();
