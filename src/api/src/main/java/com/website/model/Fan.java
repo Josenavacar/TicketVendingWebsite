@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 
 public class Fan {
 
+    //test
     @NotBlank
     private final String userName;
     @NotBlank
