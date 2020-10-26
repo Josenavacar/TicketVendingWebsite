@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/layout/Navbar';
-import Fans from './components/fans/Fans';
+//import Fans from './components/fans/Fans';
+import Matches from './components/matches/Matches';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
       <nav className="App">
         <Navbar />
         <div className="container">
-         <Fans />
+         <Matches />
         </div>
       </nav>
     );

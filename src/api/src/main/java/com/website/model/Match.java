@@ -8,25 +8,30 @@ import java.util.UUID;
 
 public class Match {
 
-    private final UUID id;
+    private final Integer id;
     @NotBlank
     private String team1;
     @NotBlank
     private String team2;
     @NotBlank
-    private Date date;
+    private String date;
     @NotBlank
     private static int seatCounter = 1;
+    private int scoreTeam1;
+    private int scoreTeam0;
+    private static Integer idGenerator = 0;
 
-    public Match(@JsonProperty("id") UUID id,
-                 @JsonProperty("team1") String team1,
+    public Match(@JsonProperty("team1") String team1,
                  @JsonProperty("team2") String team2,
-                 @JsonProperty("date") Date date)
+                 @JsonProperty("date") String date)
     {
-        this.id = id;
+        this.id = idGenerator;
+        idGenerator++;
         this.team1 = team1;
         this.team2 = team2;
         this.date = date;
+        this.scoreTeam0 = 0;
+        this.scoreTeam1 = 0;
     }
 
     public int getSeatCounter()
@@ -39,7 +44,7 @@ public class Match {
         this.seatCounter++;
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -51,7 +56,17 @@ public class Match {
         return team2;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
+
+    public void setDate(String newDate) { this.date = newDate; }
+
+    public void setScoreTeam1(int newScore) { this.scoreTeam1 = newScore; }
+
+    public int getScoreTeam1() { return this.scoreTeam1; }
+
+    public void setScoreTeam0(int newScore) { this.scoreTeam0 = newScore; }
+
+    public int getScoreTeam0() { return this.scoreTeam0; }
 }
