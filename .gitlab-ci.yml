@@ -5,14 +5,14 @@ stages:
 build:
   stage: build
   script:
-    - cd ./src/api
+    - cd ./BackEnd
     - mvn $MAVEN_CLI_OPTS compile
 test:
   stage: test
   dependencies:
     - build
   script:
-    - cd ./src/api
+    - cd ./Backend
     - mvn $MAVEN_CLI_OPTS test
 after_script:
     - echo "End CI"
