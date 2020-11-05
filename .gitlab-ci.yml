@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - cypress
 
 build:
   stage: build
@@ -14,5 +15,11 @@ test:
   script:
     - cd ./Backend
     - mvn $MAVEN_CLI_OPTS test
+
+cypress:
+  stage: cypress
+  script:
+   - cd ./Frontend/ticketwebsite-frontend
+   - npm run cypress:open
 after_script:
     - echo "End CI"
