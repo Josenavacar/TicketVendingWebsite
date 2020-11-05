@@ -1,8 +1,13 @@
 Steps to run project:
 	1. Open project (IntelliJ if possible) and import maven settings so that the java executable is found.
 	2. Execute the project.
-	3. Open terminal on root directory (or open the IDE's Terminal) and type command 'npm start' (Node js installation required).
+	3. Open terminal on FrontEnd root directory (./FrontEnd/ticketwebsite-frontend) and type command 'npm start' (Node js installation required).
 	4. Proceed to POSTMAN.
+
+Steps to run tests:
+	- For unit tests simply select the test on your IDE and run it.
+	- For cypress tests, with a terminal enter into the FrontEnd root directory (./FrontEnd/ticketwebsite-frontend) and type command 
+'npm run cypress:open' and proceed to click on each test.
 
 Note:
 So far only the class of Fan is implemented fully, the reason being that I want to investigate more on how to

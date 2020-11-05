@@ -20,6 +20,6 @@ cypress:
   stage: cypress
   script:
    - cd ./Frontend/ticketwebsite-frontend
-   - npm run cypress:open
+   - npx cypress run
 after_script:
     - echo "End CI"
