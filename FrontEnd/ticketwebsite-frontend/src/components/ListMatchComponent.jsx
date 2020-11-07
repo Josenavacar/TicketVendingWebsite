@@ -18,16 +18,14 @@ export default class ListMatchComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div style={matchStyle}>
                 {
                     this.state.matches.map(
                         match =>
-                        <div style={matchStyle}>
-                            <div className="card text-center">
-                                <h3>{match.team1} vs. {match.team2}</h3>
-                                <p>{match.date}</p>
-                                <p>Seats left: {5000 - match.seatCounter}</p>
-                            </div>
+                        <div className="card text-center">
+                            <h3>{match.team1} vs. {match.team2}</h3>
+                            <p>{match.date}</p>
+                            <p>Seats left: {5000 - match.seatCounter}</p>
                         </div>
                     )
                 }
