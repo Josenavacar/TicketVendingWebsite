@@ -1,3 +1,6 @@
+IMPORTANT: If you see failed cypress tests it's because everytime I push my code into git, for Cypress to work I need to have front and back end running,
+if I don't it will not be able to search in the website.
+
 Steps to run project:
 	1. Open project (IntelliJ if possible) and import maven settings so that the java executable is found.
 	2. Execute the project.
@@ -23,9 +26,9 @@ Create: (POST) localhost:8080/api/v1/fan
     		"email": "defaultemail"
 	}
 
-Delete: (DELETE) localhost:8080/api/v1/fan/{username}
+Delete: (DELETE) localhost:8080/api/v1/fan/{id}
 
-Update: (PUT) localhost:8080/api/v1/fan/{username}
+Update: (PUT) localhost:8080/api/v1/fan/{id}
 	Body:
 	{
     		"username": "defaultusername",
@@ -33,7 +36,7 @@ Update: (PUT) localhost:8080/api/v1/fan/{username}
     		"email": "defaultemail"
 	}
 Get: (GET) localhost:8080/api/v1/fan (All users/fans)
-Get: (GET) localhost:8080/api/v1/fan/{username} (Specific user/fan)
+Get: (GET) localhost:8080/api/v1/fan/{id} (Specific user/fan)
 
 
 
