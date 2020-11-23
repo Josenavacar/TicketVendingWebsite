@@ -27,20 +27,26 @@ public class FanController {
         return fanRepository.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/user/{id}")
     public @ResponseBody Fan getFanById(@PathVariable int id) {
-        return fanRepository.findById(id).orElse(null);
+        return fanRepository.findById(id);//.orElse(null);
+    }
+
+    @GetMapping("{username}")
+    public @ResponseBody Fan getFanByUsername(@PathVariable String username) {
+        return fanRepository.findByUsername(username);
     }
 
     @PutMapping("{id}")
     public @ResponseBody String updateFan(@PathVariable int id, @RequestBody Fan fan) {
-        Fan existingFan = fanRepository.findById(id).orElse(null);
+        Fan existingFan = fanRepository.findById(id);//.orElse(null);
         existingFan.setUsername(fan.getUsername());
         existingFan.setPassword(fan.getPassword());
         existingFan.setEmail(fan.getEmail());
         fanRepository.save(existingFan);
         return "Fan by id of " + id + " updated";
     }
+
 
     @DeleteMapping("{id}")
     public @ResponseBody String deleteFan(@PathVariable int id) {

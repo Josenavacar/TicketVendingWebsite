@@ -5,6 +5,8 @@ import ListFanComponent from './components/ListFanComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import ListMatchComponent from './components/ListMatchComponent';
+import RegisterComponent from './components/RegisterComponent.jsx';
+import LoginComponent from './components/LoginComponent.jsx';
 
 function App() {
   return (
@@ -13,9 +15,11 @@ function App() {
           <HeaderComponent />
             <div className="container">
               <Switch>
+              <Route path="/" component={ListMatchComponent}></Route>
                 <Route path="/fans" component={ListFanComponent}></Route>
                 <Route path="/matches" component={ListMatchComponent}></Route>
-                <ListFanComponent />
+                <Route path="/register" component={RegisterComponent}></Route>
+                <Route path="/login" component={LoginComponent}></Route>
               </Switch>
             </div>
           <FooterComponent />
