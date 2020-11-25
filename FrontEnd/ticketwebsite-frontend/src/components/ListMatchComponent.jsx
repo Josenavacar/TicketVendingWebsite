@@ -23,6 +23,7 @@ export default class ListMatchComponent extends Component {
                     this.state.matches.map(
                         match =>
                         <div className="card text-center">
+                            <p className="form-text text-muted">#{match.id}</p>
                             <h3>{match.team1} vs. {match.team2}</h3>
                             <p>{match.date}</p>
                             <p>Seats left: {5000 - match.seatCounter}</p>

@@ -31,18 +31,35 @@ export default class LoginComponent extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Register</h1>
+      <div class="reg-content">
         <form onSubmit={this.handleSubmit}>
-          <label>Username: </label>
-          <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
-          <label>Password: </label>
-          <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
-          <label>Email: </label>
-          <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
-          <button>Register</button>
-        </form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="username" class="form-control" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange}/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="example@gmail.com" value={this.state.email} onChange={this.handleChange}/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
+          </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
       </div>
     )
   }
 }
+
+/*
+  <div class="form-group">
+    <label>Username: </label>
+    <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
+    <label>Password: </label>
+    <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+    <label>Email: </label>
+    <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
+    <button>Register</button>
+  </div>
+*/
