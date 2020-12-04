@@ -1,19 +1,23 @@
-package com.website.model;
+package com.website.payload.request;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.Set;
 
-@Entity
-public class Fan {
+import javax.validation.constraints.*;
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
-
+public class SignupRequest {
+    @NotBlank
+    @Size(min = 3, max = 20)
     private String username;
+
+    @NotBlank
+    @Size(max = 50)
+    @Email
     private String email;
+
+    private Set<String> role;
+
+    @NotBlank
+    @Size(min = 6, max = 40)
     private String password;
 
     public String getUsername() {
@@ -40,6 +44,11 @@ public class Fan {
         this.password = password;
     }
 
-    public void setId() { this.id = id; }
-    public Integer getId() { return this.id; }
+    public Set<String> getRole() {
+        return this.role;
+    }
+
+    public void setRole(Set<String> role) {
+        this.role = role;
+    }
 }

@@ -1,9 +1,9 @@
 package com.website.controller;
 
-import com.website.model.Fan;
 import com.website.model.FootballMatch;
 import com.website.repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
