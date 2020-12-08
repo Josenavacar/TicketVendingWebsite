@@ -7,18 +7,16 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.website.payload.request.DeleteRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.website.model.ERole;
 import com.website.model.Role;
@@ -32,8 +30,7 @@ import com.website.repository.UserRepository;
 import com.website.security.jwt.JwtUtils;
 import com.website.security.services.UserDetailsImpl;
 
-//@CrossOrigin(origins = "*", maxAge = 3600)
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -120,5 +117,20 @@ public class AuthController {
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUser(@Valid @PathVariable Long id) {
+        if(!userRepository.existsById(id)){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: User does not exist"));
+        }
+        else
+        {
+            userRepository.deleteById(id);
+            return ResponseEntity.ok(new MessageResponse("User has been deleted successfully!"));
+        }
     }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AuthService from '../services/auth.service';
 import UserService from '../services/user.service'
 
 export default class ListUserComponent extends Component {
@@ -6,7 +7,8 @@ export default class ListUserComponent extends Component {
         super(props)
 
         this.state = {
-            users: []
+            users: [],
+            userToDelete: ""
         }
     }
 
@@ -14,6 +16,14 @@ export default class ListUserComponent extends Component {
         UserService.getAdminBoard().then((res) => {
             this.setState({users: res.data});
         });
+    }
+
+    handleDelete(e) {
+        if(window.confirm("Are you sure you want to delete this user?"))
+        {
+            AuthService.delete(e.id);
+            window.location.reload(false);
+        }
     }
 
     render() {
@@ -40,7 +50,7 @@ export default class ListUserComponent extends Component {
                                         <td>{user.id}</td>
                                         <td>{user.username}</td>
                                         <td>{user.email}</td>
-                                        <td></td>
+                                        <td><button className="btn btn-primary btn-block btn-danger" onClick={() => this.handleDelete(user)}>Delete</button></td>
                                     </tr>
                                 )
                             }

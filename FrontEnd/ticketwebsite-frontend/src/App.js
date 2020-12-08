@@ -9,10 +9,10 @@ import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
-import ListMatchComponent from "./components/ListMatchComponent";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbol } from '@fortawesome/free-solid-svg-icons'
 import ListUserComponent from "./components/ListUserComponent";
+import ListMatchComponent from "./components/ListMatchComponent";
 
 class App extends Component {
   constructor(props) {
