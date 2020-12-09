@@ -19,7 +19,7 @@ test:
 cypress:
   stage: cypress
   script:
-   - cd ./Frontend/ticketwebsite-frontend
+   - cd ./Frontend
    - npx cypress run
 after_script:
     - echo "End CI"
