@@ -7,8 +7,7 @@ export default class ListUserComponent extends Component {
         super(props)
 
         this.state = {
-            users: [],
-            userToDelete: ""
+            users: []
         }
     }
 

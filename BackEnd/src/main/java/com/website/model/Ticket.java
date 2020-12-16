@@ -15,8 +15,6 @@ public class Ticket {
 
     private Integer fanID;
 
-    private Integer seat;
-
     private double price = 25.99;
 
     public double getPrice() {
@@ -45,13 +43,5 @@ public class Ticket {
 
     public void setFanID(Integer fanID) {
         this.fanID = fanID;
-    }
-
-    public Integer getSeat() {
-        return seat;
-    }
-
-    public void setSeat(Integer seat) {
-        this.seat = seat;
     }
 }

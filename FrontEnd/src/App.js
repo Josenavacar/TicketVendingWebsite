@@ -8,11 +8,12 @@ import AuthService from "./services/auth.service";
 import Login from "./components/auth/login.component";
 import Register from "./components/auth/register.component";
 import Profile from "./components/auth/profile.component";
-import BoardUser from "./components/board-user.component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbol } from '@fortawesome/free-solid-svg-icons'
 import ListUserComponent from "./components/ListUserComponent";
 import ListMatchComponent from "./components/ListMatchComponent";
+import Store from "./components/store/store";
+import revenue from "./components/economics/revenue";
 
 class App extends Component {
   constructor(props) {
@@ -48,13 +49,21 @@ class App extends Component {
         <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="i"><FontAwesomeIcon icon={faFutbol} size="2x" color="white"/></div>
          <div><a className="navbar-brand">TicketWebsite</a></div>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
-            </li>
-
+         <div className="navbar-nav mr-auto">
+            {currentUser ? (
+              <li className="nav-item">
+                <Link to={"/store"} className="nav-link">
+                Store
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link to={"/home"} className="nav-link">
+                  Home
+                </Link>
+              </li>
+            )}
+            
             {showAdminBoard && (
               <li className="nav-item">
                 <Link to={"/admin"} className="nav-link">
@@ -63,10 +72,10 @@ class App extends Component {
               </li>
             )}
 
-            {currentUser && (
+            {showAdminBoard && (
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
+                <Link to={"/revenue"} className="nav-link">
+                  Revenue
                 </Link>
               </li>
             )}
@@ -108,8 +117,9 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
-            <Route path="/user" component={BoardUser} />
+            <Route path="/store" component={Store} />
             <Route path="/admin" component={ListUserComponent} />
+            <Route path="/revenue" component={revenue} />
           </Switch>
         </div>
       </div>

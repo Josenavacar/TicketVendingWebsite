@@ -44,7 +44,6 @@ public class TicketController {
         Ticket existingTicket = repository.findById(id).orElse(null);
         existingTicket.setFanID(newTicket.getFanID());
         existingTicket.setMatchID(newTicket.getMatchID());
-        existingTicket.setSeat(newTicket.getSeat());
         repository.save(existingTicket);
         return "Ticket with id " + id + " has been updated";
     }

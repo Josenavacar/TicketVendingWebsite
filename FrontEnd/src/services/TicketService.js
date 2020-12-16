@@ -7,6 +7,13 @@ class TicketService {
     getTickets(){
         return axios.get(TICKET_API_BASE_URL);
     }
+
+    purchaseTicket(matchID, fanID) {
+        return axios.post(TICKET_API_BASE_URL, {
+            matchID,
+            fanID
+        });
+    }
 }
 
 export default new TicketService()
