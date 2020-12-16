@@ -5,9 +5,9 @@ import "./App.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/login.component";
-import Register from "./components/register.component";
-import Profile from "./components/profile.component";
+import Login from "./components/auth/login.component";
+import Register from "./components/auth/register.component";
+import Profile from "./components/auth/profile.component";
 import BoardUser from "./components/board-user.component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbol } from '@fortawesome/free-solid-svg-icons'
