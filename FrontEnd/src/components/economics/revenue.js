@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import authService from '../../services/auth.service';
 import TicketService from '../../services/TicketService'
 
 export default class revenue extends Component {
@@ -6,7 +7,7 @@ export default class revenue extends Component {
         super(props)
 
         this.state = {
-            tickets: []
+            tickets: [],
         }
     }
 
@@ -46,6 +47,7 @@ export default class revenue extends Component {
                             }
                         </tbody>
                     </table>
+                        <h3>Total Revenue: {this.state.tickets.length*25.99}€</h3>
                 </div>
             </div>
         )
