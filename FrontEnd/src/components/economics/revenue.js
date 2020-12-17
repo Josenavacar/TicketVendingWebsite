@@ -47,7 +47,7 @@ export default class revenue extends Component {
                             }
                         </tbody>
                     </table>
-                        <h3>Total Revenue: {this.state.tickets.length*25.99}€</h3>
+                        <h3>Total Revenue: {this.state.tickets.reduce((a, b) => a + (b['price'] || 0), 0)}€</h3>
                 </div>
             </div>
         )
