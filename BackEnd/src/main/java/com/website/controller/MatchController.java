@@ -3,11 +3,10 @@ package com.website.controller;
 import com.website.model.FootballMatch;
 import com.website.repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @Controller
 @RequestMapping(path="/api/v1/match")
 public class MatchController {

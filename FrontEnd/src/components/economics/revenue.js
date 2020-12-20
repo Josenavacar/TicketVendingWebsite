@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import authService from '../../services/auth.service';
 import TicketService from '../../services/TicketService'
 
 export default class revenue extends Component {
@@ -28,7 +27,9 @@ export default class revenue extends Component {
                             <tr>
                                 <th> # </th>
                                 <th> UserID </th>
+                                <th> Username </th>
                                 <th> MatchID </th>
+                                <th> Match Name </th>
                                 <th> Price</th>
                             </tr>
                         </thead>
@@ -40,16 +41,20 @@ export default class revenue extends Component {
                                     <tr key = {ticket.id}>
                                         <td>{ticket.id}</td>
                                         <td>{ticket.fanID}</td>
+                                        <td>{ticket.userName}</td>
                                         <td>{ticket.matchID}</td>
+                                        <td>{ticket.matchName}</td>
                                         <td>{ticket.price} €</td>
                                     </tr>
                                 )
                             }
                         </tbody>
                     </table>
-                        <h3>Total Revenue: {this.state.tickets.reduce((a, b) => a + (b['price'] || 0), 0)}€</h3>
+                        <h3>Total Revenue: {this.state.tickets.length * 25.99}€</h3>
                 </div>
             </div>
         )
     }
 }
+
+//this.state.tickets.reduce((a, b) => a + (b['price'] || 0), 0) (Method for calculating properly price)

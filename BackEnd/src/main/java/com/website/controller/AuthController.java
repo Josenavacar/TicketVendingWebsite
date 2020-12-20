@@ -30,7 +30,7 @@ import com.website.repository.UserRepository;
 import com.website.security.jwt.JwtUtils;
 import com.website.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

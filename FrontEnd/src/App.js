@@ -9,11 +9,13 @@ import Login from "./components/auth/login.component";
 import Register from "./components/auth/register.component";
 import Profile from "./components/auth/profile.component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFutbol } from '@fortawesome/free-solid-svg-icons'
+import { faFutbol, faShoppingCart, faSignOutAlt, faSignInAlt, faHistory, faUserCircle, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import ListUserComponent from "./components/ListUserComponent";
 import ListMatchComponent from "./components/ListMatchComponent";
 import Store from "./components/store/store";
 import revenue from "./components/economics/revenue";
+import cart from "./components/cart/cart";
+import history from "./components/history/history";
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +50,7 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="i"><FontAwesomeIcon icon={faFutbol} size="2x" color="white"/></div>
-         <div><a className="navbar-brand">TicketWebsite</a></div>
+         <div><a className="navbar-brand" href="http://localhost:3000/">TicketWebsite</a></div>
          <div className="navbar-nav mr-auto">
             {currentUser ? (
               <li className="nav-item">
@@ -84,13 +86,23 @@ class App extends Component {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
+                <Link to={"/cart"} className="nav-link">
+                  <FontAwesomeIcon icon={faShoppingCart} size="1x" color="white"/>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/history"} className="nav-link">
+                <FontAwesomeIcon icon={faHistory} size="1x" color="white"/>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
+                  {currentUser.username} <FontAwesomeIcon icon={faUserCircle} size="1x" color="white"/>
                 </Link>
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={this.logOut}>
-                  Log Out
+                  Sign Out <FontAwesomeIcon icon={faSignOutAlt} size="1x" color="white"/>
                 </a>
               </li>
             </div>
@@ -98,13 +110,13 @@ class App extends Component {
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
-                  Login
+                  Sign In <FontAwesomeIcon icon={faSignInAlt} size="1x" color="white"/>
                 </Link>
               </li>
 
               <li className="nav-item">
                 <Link to={"/register"} className="nav-link">
-                  Sign Up
+                  Sign Up <FontAwesomeIcon icon={faUserPlus} size="1x" color="white"/>
                 </Link>
               </li>
             </div>
@@ -120,6 +132,8 @@ class App extends Component {
             <Route path="/store" component={Store} />
             <Route path="/admin" component={ListUserComponent} />
             <Route path="/revenue" component={revenue} />
+            <Route path="/cart" component={cart} />
+            <Route path="/history" component={history} />
           </Switch>
         </div>
       </div>

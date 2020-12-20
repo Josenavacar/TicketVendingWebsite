@@ -13,9 +13,15 @@ public class Ticket {
 
     private Integer matchID;
 
+    private String matchName;
+
+    private String userName;
+
     private Integer fanID;
 
     private double price = 25.99;
+
+    private int paid;
 
     public double getPrice() {
         return price;
@@ -44,4 +50,20 @@ public class Ticket {
     public void setFanID(Integer fanID) {
         this.fanID = fanID;
     }
+
+    public int getPaid() {
+        return paid;
+    }
+
+    public void setPaid(int paid) {
+        this.paid = paid;
+    }
+
+    public void setMatchName(String name) { this.matchName = name; }
+
+    public String getMatchName() { return this.matchName; }
+
+    public void setUserName(String name) { this.userName = name; }
+
+    public String getUserName() { return this.userName; }
 }
