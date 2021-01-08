@@ -10,5 +10,3 @@ describe('Login test', function() {
         cy.contains('testuser@cypresstest.com')
     })
 })
-
-//test
