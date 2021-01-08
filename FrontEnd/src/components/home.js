@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MatchService from '../services/MatchService';
 
-export default class ListMatchComponent extends Component {
+export default class Home extends Component {
     constructor(props) {
         super(props)
 
@@ -22,7 +22,7 @@ export default class ListMatchComponent extends Component {
                 {
                     this.state.matches.map(
                         match =>
-                        <div className="card text-center">
+                        <div className="card text-center" key={match.id}>
                             <p className="form-text text-muted">#{match.id}</p>
                             <h3>{match.team1} vs. {match.team2}</h3>
                             <p>{match.date}</p>
@@ -37,6 +37,6 @@ export default class ListMatchComponent extends Component {
 
 const matchStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateColumns: 'repeat(4, 1fr)',
     gridGap: '1rem'
 }

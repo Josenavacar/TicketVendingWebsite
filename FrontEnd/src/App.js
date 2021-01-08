@@ -11,7 +11,7 @@ import Profile from "./components/auth/profile.component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbol, faShoppingCart, faSignOutAlt, faSignInAlt, faHistory, faUserCircle, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import ListUserComponent from "./components/ListUserComponent";
-import ListMatchComponent from "./components/ListMatchComponent";
+import Home from "./components/home";
 import Store from "./components/store/store";
 import revenue from "./components/economics/revenue";
 import cart from "./components/cart/cart";
@@ -125,7 +125,7 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={ListMatchComponent} />
+            <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />

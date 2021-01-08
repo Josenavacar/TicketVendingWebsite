@@ -24,7 +24,7 @@ export default class Store extends Component {
         {
             const matchname = e.team1 + " vs. " + e.team2;
             const username = authService.getCurrentUser().username;
-            TicketService.purchaseTicket(matchname, username, e.id, this.state.userID, 0)
+            TicketService.purchaseTicket(matchname, username, e.date, e.id, this.state.userID, 0)
         }
     }
 
@@ -53,6 +53,6 @@ export default class Store extends Component {
 
 const matchStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateColumns: 'repeat(4, 1fr)',
     gridGap: '1rem'
 }

@@ -28,7 +28,8 @@ export default class history extends Component {
                         <thead>
                             <tr>
                                 <th> # </th>
-                                <th> Match ID </th>
+                                <th> Match Name </th>
+                                <th> Date </th>
                                 <th> Price in € </th>
                             </tr>
                         </thead>
@@ -39,6 +40,7 @@ export default class history extends Component {
                                     <tr key = {ticket.id}>
                                         <td>{ticket.id}</td>
                                         <td>{ticket.matchName}</td>
+                                        <td>{ticket.matchDate}</td>
                                         <td>{ticket.price}</td>
                                     </tr>
                                 )

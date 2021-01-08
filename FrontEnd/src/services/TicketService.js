@@ -17,10 +17,11 @@ class TicketService {
         return axios.get(TICKET_API_BASE_URL + "/fan/" + userID + "/1", { headers: authHeader() });
     }
 
-    purchaseTicket(matchName, userName, matchID, fanID, paid) {
+    purchaseTicket(matchName, userName, matchDate, matchID, fanID, paid) {
         return axios.post(TICKET_API_BASE_URL, {
             matchName,
             userName,
+            matchDate,
             matchID,
             fanID,
             paid

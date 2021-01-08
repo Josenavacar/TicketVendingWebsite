@@ -47,6 +47,7 @@ export default class cart extends Component {
                             <tr>
                                 <th> # </th>
                                 <th> Match Name </th>
+                                <th> Date </th>
                                 <th> Price</th>
                                 <th> Actions</th>
                             </tr>
@@ -59,6 +60,7 @@ export default class cart extends Component {
                                     <tr key = {ticket.id}>
                                         <td>{ticket.id}</td>
                                         <td>{ticket.matchName}</td>
+                                        <td>{ticket.matchDate}</td>
                                         <td>{ticket.price} €</td>
                                         <td><button className="btn btn-primary btn-block btn-danger" onClick={() => this.handleDelete(ticket)}>Remove</button></td>
                                     </tr>

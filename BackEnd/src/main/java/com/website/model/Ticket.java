@@ -19,6 +19,8 @@ public class Ticket {
 
     private Integer fanID;
 
+    private String matchDate;
+
     private double price = 25.99;
 
     private int paid;
@@ -66,4 +68,8 @@ public class Ticket {
     public void setUserName(String name) { this.userName = name; }
 
     public String getUserName() { return this.userName; }
+
+    public void setMatchDate(String date) {this.matchDate = date;}
+
+    public String getMatchDate() {return this.matchDate;}
 }
