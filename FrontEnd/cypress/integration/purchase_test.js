@@ -6,7 +6,6 @@ describe('Login and purchase test', function () {
 
         cy.get('input[name=username]').type('testuser')
         cy.get('input[name=password]').type('123456{enter}')
-        cy.tab()
-        cy.type('{enter}')
+        cy.get('')
     })
 })
