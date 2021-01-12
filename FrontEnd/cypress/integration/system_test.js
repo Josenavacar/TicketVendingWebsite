@@ -6,5 +6,8 @@ describe('Login test', function() {
         cy.get('input[name=password]').type('123456{enter}')
         cy.url()
             .should('includes', '/store')
+
+        cy.visit('http://localhost:3000/profile')
+        cy.contains('testuser')
     })
 })
