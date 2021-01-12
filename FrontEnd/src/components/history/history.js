@@ -23,7 +23,7 @@ export default class history extends Component {
             <div>
                 <h2 className="text-center">Purchase History</h2>
                 <div className="row">
-                    <table className="table table-striped table-bordered">
+                    <table className="table table-striped table borderless">
 
                         <thead>
                             <tr>

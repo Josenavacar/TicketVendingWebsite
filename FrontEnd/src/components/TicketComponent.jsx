@@ -22,7 +22,7 @@ export default class TicketComponent extends Component {
             <div>
                 <h2 className="text-center">Ticket List</h2>
                 <div className="row">
-                    <table className="table table-striped table-bordered">
+                    <table className="table table-striped table borderless">
 
                         <thead>
                             <tr>

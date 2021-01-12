@@ -15,29 +15,46 @@ export default class Profile extends Component {
 
     return (
       <div className="container">
-        <header className="jumbotron">
-          <h3>
-            <strong>{currentUser.username}</strong> Profile
-          </h3>
-        </header>
-        <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-        </p>
-        <p>
+        <div>
+          <header>
+            <h1>
+              <strong>{currentUser.username}</strong> <h3 class="mb-3">profile</h3>
+            </h1>
+          </header>
+        </div>
+        
+        <hr class="my-4"></hr>
+
+        <div>
           <strong>Id:</strong>{" "}
-          {currentUser.id}
-        </p>
-        <p>
+          <ul>
+            {currentUser.id}
+          </ul>
+        </div>
+        
+        <div>
+          <strong>Token:</strong>{" "}
+          <ul>
+            {currentUser.accessToken.substring(0, 20)} ...{" "}
+            {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+          </ul>
+          
+        </div>
+
+        <div>
           <strong>Email:</strong>{" "}
-          {currentUser.email}
-        </p>
-        <strong>Authorities:</strong>
-        <ul>
-          {currentUser.roles &&
-            currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-        </ul>
+          <ul>
+           {currentUser.email}
+          </ul>
+        </div>
+
+        <div>
+          <strong>Authorities:</strong>
+          <ul>
+            {currentUser.roles &&
+              currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
+          </ul> 
+        </div>
       </div>
     );
   }

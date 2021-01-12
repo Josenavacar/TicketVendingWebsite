@@ -41,7 +41,7 @@ export default class cart extends Component {
             <div>
                 <h2 className="text-center">Cart</h2>
                 <div className="row">
-                    <table className="table table-striped table-bordered">
+                    <table className="table table-striped table borderless">
 
                         <thead>
                             <tr>

@@ -18,18 +18,22 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div style={matchStyle}>
-                {
-                    this.state.matches.map(
-                        match =>
-                        <div className="card text-center" key={match.id}>
-                            <p className="form-text text-muted">#{match.id}</p>
-                            <h3>{match.team1} vs. {match.team2}</h3>
-                            <p>{match.date}</p>
-                        </div>
-                    )
-                }
-            </div>
+            <body>
+                <div className="container">
+                    <div style={matchStyle}>
+                        {
+                            this.state.matches.map(
+                                match =>
+                                <div className="card text-center" key={match.id}>
+                                    <p className="form-text text-muted">#{match.id}</p>
+                                    <h3>{match.team1} vs. {match.team2}</h3>
+                                    <p>{match.date}</p>
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+            </body>
         )
     }
 
