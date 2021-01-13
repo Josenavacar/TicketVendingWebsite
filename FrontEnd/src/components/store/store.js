@@ -30,21 +30,23 @@ export default class Store extends Component {
 
     render() {
         return (
-            <div style={matchStyle}>
-                {
-                    this.state.matches.map(
-                        match =>
-                        <div className="card text-center" key={match.id}>
-                            <p className="form-text text-muted">#{match.id}</p>
-                            <h3>{match.team1} vs. {match.team2}</h3>
-                            <p>{match.date}</p>
-                            <div>
-                                <h3>25.99 €</h3>
-                                <button type="button" className="btn btn-dark" onClick={() => this.handlePurchase(match)}>Buy Now!</button>
+            <div>
+                <div style={matchStyle}>
+                    {
+                        this.state.matches.map(
+                            match =>
+                            <div className="card text-center cardpadding" key={match.id}>
+                                <p className="form-text text-muted">#{match.id}</p>
+                                <h3>{match.team1} vs. {match.team2}</h3>
+                                <p>{match.date}</p>
+                                <div>
+                                    <h3>25.99 €</h3>
+                                    <button type="button" className="btn btn-dark" onClick={() => this.handlePurchase(match)}>Buy Now!</button>
+                                </div>
                             </div>
-                        </div>
-                    )
-                }
+                        )
+                    }
+                </div>
             </div>
         )
     }
