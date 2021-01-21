@@ -20,12 +20,11 @@ export default class Store extends Component {
     }
 
     handlePurchase(e) {
-        if(window.confirm("Are you sure you want to purchase this ticket?"))
-        {
-            const matchname = e.team1 + " vs. " + e.team2;
-            const username = authService.getCurrentUser().username;
-            TicketService.purchaseTicket(matchname, username, e.date, e.id, this.state.userID, 0)
-        }
+        const matchname = e.team1 + " vs. " + e.team2;
+        const username = authService.getCurrentUser().username;
+        TicketService.purchaseTicket(matchname, username, e.date, e.id, this.state.userID, 0);
+
+        alert('Ticket added to cart');
     }
 
     render() {
@@ -41,7 +40,7 @@ export default class Store extends Component {
                                 <p>{match.date}</p>
                                 <div>
                                     <h3>25.99 €</h3>
-                                    <button type="button" className="btn btn-dark" onClick={() => this.handlePurchase(match)}>Buy Now!</button>
+                                    <button type="button" className="btn btn-dark" onClick={() => this.handlePurchase(match)}>Add to Cart</button>
                                 </div>
                             </div>
                         )
