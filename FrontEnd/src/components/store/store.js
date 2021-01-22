@@ -20,6 +20,7 @@ export default class Store extends Component {
     }
 
     handlePurchase(e) {
+        
         const matchname = e.team1 + " vs. " + e.team2;
         const username = authService.getCurrentUser().username;
         TicketService.purchaseTicket(matchname, username, e.date, e.id, this.state.userID, 0);
